@@ -22,7 +22,7 @@ limitations under the License.
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.roller</groupId>
     <artifactId>roller-project</artifactId>
-    <version>6.1.0-SNAPSHOT-GMS</version>
+    <version>6.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <prerequisites>
@@ -33,6 +33,7 @@ limitations under the License.
     <description>
         Roller is an open source blog server built with open source Java
         libraries including Struts2, Velocity, ROME and Guice.
+        Gary wrote some text here.
     </description>
     <url>http://roller.apache.org</url>
     <inceptionYear>2002</inceptionYear>
