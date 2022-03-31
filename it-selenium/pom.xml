@@ -60,7 +60,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>3.4.0</version>
+            <version>3.141.59</version>
         </dependency>
 
         <!-- Will bring in once we configure a Chrome option -->
