@@ -272,7 +272,7 @@ limitations under the License.
         <dependency>
             <groupId>org.webjars.bower</groupId>
             <artifactId>summernote</artifactId>
-            <version>0.8.11</version>
+            <version>0.8.20</version>
         </dependency>
 
         <dependency>
@@ -783,23 +783,16 @@ limitations under the License.
                             <target>
                                 <!-- Workaround for git distribution that doesn't keep empty directories.
                                      For detail check [ROL-2086] -->
-                                <taskdef resource="net/sf/antcontrib/antlib.xml" />
-                                <property file="${basedir}/src/main/resources/sql/dbscripts.properties" />
+                                <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+                                <property file="${basedir}/src/main/resources/sql/dbscripts.properties"/>
                                 <for list="${databases}" param="database" delimiter=" ">
                                     <sequential>
-                                        <mkdir dir="${basedir}/target/dbscripts/@{database}" />
+                                        <mkdir dir="${basedir}/target/dbscripts/@{database}"/>
                                     </sequential>
                                 </for>
 
-                                <taskdef name="texen"
-                                         classname="org.apache.velocity.texen.ant.TexenTask"
-                                         classpathref="maven.plugin.classpath"/>
-                                <texen
-                                    controlTemplate  ="control.vm"
-                                    contextProperties="${basedir}/src/main/resources/sql/dbscripts.properties"
-                                    templatePath     ="${basedir}/src/main/resources/sql"
-                                    outputDirectory  ="${basedir}/target/dbscripts"
-                                    outputFile       ="README.txt"/>
+                                <taskdef name="texen" classname="org.apache.velocity.texen.ant.TexenTask" classpathref="maven.plugin.classpath"/>
+                                <texen controlTemplate="control.vm" contextProperties="${basedir}/src/main/resources/sql/dbscripts.properties" templatePath="${basedir}/src/main/resources/sql" outputDirectory="${basedir}/target/dbscripts" outputFile="README.txt"/>
                             </target>
                         </configuration>
                     </execution>
