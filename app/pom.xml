@@ -47,7 +47,7 @@ limitations under the License.
         <commons-codec.version>1.14</commons-codec.version>
         <eclipse-link.version>2.7.7</eclipse-link.version>
         <guice.version>4.2.3</guice.version>
-        <log4j2.version>2.12.1</log4j2.version>
+        <log4j2.version>2.13.2</log4j2.version>
         <lucene.version>8.5.1</lucene.version>
         <oauth-core.version>20100527</oauth-core.version>
         <maven-war.version>3.2.3</maven-war.version>
@@ -783,23 +783,16 @@ limitations under the License.
                             <target>
                                 <!-- Workaround for git distribution that doesn't keep empty directories.
                                      For detail check [ROL-2086] -->
-                                <taskdef resource="net/sf/antcontrib/antlib.xml" />
-                                <property file="${basedir}/src/main/resources/sql/dbscripts.properties" />
+                                <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+                                <property file="${basedir}/src/main/resources/sql/dbscripts.properties"/>
                                 <for list="${databases}" param="database" delimiter=" ">
                                     <sequential>
-                                        <mkdir dir="${basedir}/target/dbscripts/@{database}" />
+                                        <mkdir dir="${basedir}/target/dbscripts/@{database}"/>
                                     </sequential>
                                 </for>
 
-                                <taskdef name="texen"
-                                         classname="org.apache.velocity.texen.ant.TexenTask"
-                                         classpathref="maven.plugin.classpath"/>
-                                <texen
-                                    controlTemplate  ="control.vm"
-                                    contextProperties="${basedir}/src/main/resources/sql/dbscripts.properties"
-                                    templatePath     ="${basedir}/src/main/resources/sql"
-                                    outputDirectory  ="${basedir}/target/dbscripts"
-                                    outputFile       ="README.txt"/>
+                                <taskdef name="texen" classname="org.apache.velocity.texen.ant.TexenTask" classpathref="maven.plugin.classpath"/>
+                                <texen controlTemplate="control.vm" contextProperties="${basedir}/src/main/resources/sql/dbscripts.properties" templatePath="${basedir}/src/main/resources/sql" outputDirectory="${basedir}/target/dbscripts" outputFile="README.txt"/>
                             </target>
                         </configuration>
                     </execution>
